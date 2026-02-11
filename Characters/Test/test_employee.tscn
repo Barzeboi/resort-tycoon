@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bi8ejdny8ul8c"]
+
+[ext_resource type="Script" uid="uid://d1xalm1dofkc" path="res://Scripts/Test/test_charactergd.gd" id="1_hicoq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6uguj"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_hicoq"]
+var/target/name = &"target"
+var/target/type = 5
+var/target/value = Vector2(0, 0)
+var/target/hint = 0
+var/target/hint_string = ""
+
+[sub_resource type="BTSequence" id="BTSequence_lyqtg"]
+
+[sub_resource type="BBVariant" id="BBVariant_hicoq"]
+value_source = 1
+variable = &"target"
+resource_name = "$target"
+
+[sub_resource type="BTCheckAgentProperty" id="BTCheckAgentProperty_lyqtg"]
+property = &"position"
+value = SubResource("BBVariant_hicoq")
+
+[sub_resource type="BTSelector" id="BTSelector_ysctt"]
+children = [SubResource("BTSequence_lyqtg"), SubResource("BTCheckAgentProperty_lyqtg")]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_73j2v"]
+blackboard_plan = SubResource("BlackboardPlan_hicoq")
+root_task = SubResource("BTSelector_ysctt")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_pfxsy"]
+
+[node name="TestEmployee" type="CharacterBody2D" unique_id=1369238804]
+script = ExtResource("1_hicoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1042509802]
+shape = SubResource("CircleShape2D_6uguj")
+debug_color = Color(0.82373685, 0.375346, 0.3752183, 0.41960785)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1360615252]
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=1063370375]
+behavior_tree = SubResource("BehaviorTree_73j2v")
+blackboard_plan = SubResource("BlackboardPlan_pfxsy")

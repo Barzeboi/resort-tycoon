@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://f1ujog4tu0ra"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6w285"]
+vertices = PackedVector2Array(1146, 635.0703, 10.9609375, 643.9219, 9.03125, 11, 1146, 11)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1, 1, 1, 654, 1156, 645, 1156, 1)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w285"]
+size = Vector2(532, 19.5)
+
+[node name="TestScene" type="Node2D" unique_id=2111025317]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1637852851]
+navigation_polygon = SubResource("NavigationPolygon_6w285")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1520475328]
+position = Vector2(581, 451)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=673057610]
+shape = SubResource("RectangleShape2D_6w285")
+metadata/_edit_lock_ = true
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="StaticBody2D/CollisionShape2D" unique_id=1034157124]
+position = Vector2(-265.83896, -9.502869)
+vertices = PackedVector2Array(-0.16104126, 0.50286865, -0.16104126, 19.502869, 531.839, 19.502869, 531.839, -0.49713135)
+affect_navigation_mesh = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=374248958]
+position = Vector2(857, 334)
+rotation = 1.5707964
+scale = Vector2(0.48000124, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1476866330]
+shape = SubResource("RectangleShape2D_6w285")
+metadata/_edit_lock_ = true
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="StaticBody2D2/CollisionShape2D" unique_id=283527607]
+position = Vector2(-265.83896, -9.502869)
+vertices = PackedVector2Array(-0.16104126, 0.50286865, -0.16104126, 19.502869, 531.839, 19.502869, 531.839, -0.49713135)
+affect_navigation_mesh = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2055617693]
+position = Vector2(580, 216)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=974515969]
+shape = SubResource("RectangleShape2D_6w285")
+metadata/_edit_lock_ = true
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="StaticBody2D3/CollisionShape2D" unique_id=331973418]
+position = Vector2(-265.83896, -9.502869)
+vertices = PackedVector2Array(-0.16104126, 0.50286865, -0.16104126, 19.502869, 531.839, 19.502869, 531.839, -0.49713135)
+affect_navigation_mesh = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1342151775]
+position = Vector2(305, 333.00003)
+rotation = 1.5707964
+scale = Vector2(0.48000124, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=538105760]
+shape = SubResource("RectangleShape2D_6w285")
+metadata/_edit_lock_ = true
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="StaticBody2D4/CollisionShape2D" unique_id=834923348]
+position = Vector2(-265.83896, -9.502869)
+vertices = PackedVector2Array(-0.16104126, 0.50286865, -0.16104126, 19.502869, 531.839, 19.502869, 531.839, -0.49713135)
+affect_navigation_mesh = true
